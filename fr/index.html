@@ -6,6 +6,7 @@
     <meta name="description" content="Découvrez les statistiques du serveur et les données de performance de 6love.ch. Obtenez des informations sur les données d'utilisation quotidiennes, mensuelles et annuelles, ainsi que des informations en temps réel sur l'activité du site Web.">
     <meta name="keywords" content="statistiques du serveur, 6love, données d'utilisation, Google Analytics, données en temps réel, données de performance, statistiques anonymisées">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Canonical Tag -->
     <link rel="canonical" href="https://stats.6love.ch/fr/">
 
@@ -26,6 +27,7 @@
     <link rel="alternate" href="https://stats.6love.ch/ja/" hreflang="ja">
     <link rel="alternate" href="https://stats.6love.ch/ar/" hreflang="ar">
     <link rel="alternate" href="https://stats.6love.ch/hi/" hreflang="hi">
+
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
@@ -59,4 +61,46 @@
     </div>
     <div id="detailModal" class="dialog-overlay">
         <div class="dialog-content">
-            <span class
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Détails</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Pays</th>
+                    <th>Séances</th>
+                </tr>
+                </thead>
+                <tbody id="detail-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="realtime-section" class="chart-section">
+        <h2>Données en Direct</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Pays</th>
+                <th>Utilisateurs Actifs</th>
+            </tr>
+            </thead>
+            <tbody id="realtime-table-body"></tbody>
+        </table>
+    </div>
+</main>
+!-- Footer Section for Links -->
+<div class="footer-links">
+    <h2>Liens</h2>
+    <ul>
+        <li><a href="https://6love.ch" target="_blank">Sex Portal</a></li>
+        <li><a href="https://www.lang-strasse.ch/" target="_blank">Langstrasse Zürich</a></li>
+        <li><a href="https://sexdate.services/" target="_blank">Sexdates</a></li>
+        <li><a href="https://its-my.link/" target="_blank">My Link</a></li>
+        <li><a href="https://www.yilmaz.services/" target="_blank">Coding & Webservices</a></li>
+        <li><a href="https://sixnetwork.ch/" target="_blank">Erotic API</a></li>
+        <li><a href="https://sex-portale.ch/" target="_blank">Sex Portale</a></li>
+    </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/statistics.js"></script>
+</body>
+</html>

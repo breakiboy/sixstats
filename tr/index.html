@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunucu İstatistikleri - 6love.ch</title>
+    <meta name="description" content="6love.ch sunucu istatistiklerini ve performans verilerini keşfedin. Günlük, aylık ve yıllık kullanım verilerine ve web sitesi etkinliği ile ilgili gerçek zamanlı bilgilere erişin.">
+    <meta name="keywords" content="sunucu istatistikleri, 6love, kullanım verileri, Google Analytics, gerçek zamanlı veriler, performans verileri, anonimleştirilmiş istatistikler">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://stats.6love.ch/tr/">
+
+    <!-- Alternative URLs for each language version -->
+    <link rel="alternate" href="https://stats.6love.ch/" hreflang="x-default">
+    <link rel="alternate" href="https://stats.6love.ch/de/" hreflang="de">
+    <link rel="alternate" href="https://stats.6love.ch/en/" hreflang="en">
+    <link rel="alternate" href="https://stats.6love.ch/es/" hreflang="es">
+    <link rel="alternate" href="https://stats.6love.ch/fr/" hreflang="fr">
+    <link rel="alternate" href="https://stats.6love.ch/it/" hreflang="it">
+    <link rel="alternate" href="https://stats.6love.ch/tr/" hreflang="tr">
+    <link rel="alternate" href="https://stats.6love.ch/hu/" hreflang="hu">
+    <link rel="alternate" href="https://stats.6love.ch/ro/" hreflang="ro">
+    <link rel="alternate" href="https://stats.6love.ch/bg/" hreflang="bg">
+    <link rel="alternate" href="https://stats.6love.ch/pt/" hreflang="pt">
+    <link rel="alternate" href="https://stats.6love.ch/ru/" hreflang="ru">
+    <link rel="alternate" href="https://stats.6love.ch/zh/" hreflang="zh">
+    <link rel="alternate" href="https://stats.6love.ch/ja/" hreflang="ja">
+    <link rel="alternate" href="https://stats.6love.ch/ar/" hreflang="ar">
+    <link rel="alternate" href="https://stats.6love.ch/hi/" hreflang="hi">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<header>
+    <h1>Sunucu İstatistikleri için 6love.ch</h1>
+</header>
+<main>
+    <section id="introduction" class="chart-section">
+        <h2>Güncel Performans Verileri</h2>
+        <p>
+            Sunucu istatistiklerimizi sizinle paylaşmaktan mutluluk duyuyoruz. Günlük verilerin 48-72 saatlik bir gecikmesi olabileceğini lütfen unutmayın. Bu nedenle, en son veriler günlük grafikte eksik olabilir çünkü tamamlanmamıştır.
+        </p>
+        <p>
+            Verilerimizi analiz etmek için yalnızca Google Analytics'i kullanıyoruz, böylece size en doğru içgörüleri sunuyoruz. Canlı veriler, son 30 dakikadaki etkinlikleri, kullanıcıları ve ülkelerini gösterir. Bu veriler 5 dakikada bir güncellenir.
+        </p>
+        <p>
+            Ayrıntılı bir analiz sağlamak için grafiklere tıklayabilirsiniz. İstatistik verileri %100 anonimdir.
+        </p>
+    </section>
+    <div class="chart-section">
+        <h2>Günlük Kullanım İstatistikleri</h2>
+        <canvas id="daily-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Aylık Kullanım İstatistikleri</h2>
+        <canvas id="monthly-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Yıllık Kullanım İstatistikleri</h2>
+        <canvas id="yearly-chart" class="chart-container"></canvas>
+    </div>
+    <div id="detailModal" class="dialog-overlay">
+        <div class="dialog-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Detaylar</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Ülke</th>
+                    <th>Oturumlar</th>
+                </tr>
+                </thead>
+                <tbody id="detail-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="realtime-section" class="chart-section">
+        <h2>Canlı Veriler</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Ülke</th>
+                <th>Aktif Kullanıcılar</th>
+            </tr>
+            </thead>
+            <tbody id="realtime-table-body"></tbody>
+        </table>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/statistics.js"></script>
+</body>
+</html>

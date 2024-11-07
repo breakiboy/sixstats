@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>服务器统计 - 6love.ch</title>
+    <meta name="description" content="了解6love.ch的服务器统计和性能数据。获取每日、每月和每年的使用数据，以及有关网站活动的实时信息。">
+    <meta name="keywords" content="服务器统计, 6love, 使用数据, Google Analytics, 实时数据, 性能数据, 匿名统计">
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://stats.6love.ch/zh/">
+
+    <!-- Alternative URLs for each language version -->
+    <link rel="alternate" href="https://stats.6love.ch/" hreflang="x-default">
+    <link rel="alternate" href="https://stats.6love.ch/de/" hreflang="de">
+    <link rel="alternate" href="https://stats.6love.ch/en/" hreflang="en">
+    <link rel="alternate" href="https://stats.6love.ch/es/" hreflang="es">
+    <link rel="alternate" href="https://stats.6love.ch/fr/" hreflang="fr">
+    <link rel="alternate" href="https://stats.6love.ch/it/" hreflang="it">
+    <link rel="alternate" href="https://stats.6love.ch/tr/" hreflang="tr">
+    <link rel="alternate" href="https://stats.6love.ch/hu/" hreflang="hu">
+    <link rel="alternate" href="https://stats.6love.ch/ro/" hreflang="ro">
+    <link rel="alternate" href="https://stats.6love.ch/bg/" hreflang="bg">
+    <link rel="alternate" href="https://stats.6love.ch/pt/" hreflang="pt">
+    <link rel="alternate" href="https://stats.6love.ch/ru/" hreflang="ru">
+    <link rel="alternate" href="https://stats.6love.ch/zh/" hreflang="zh">
+    <link rel="alternate" href="https://stats.6love.ch/ja/" hreflang="ja">
+    <link rel="alternate" href="https://stats.6love.ch/ar/" hreflang="ar">
+    <link rel="alternate" href="https://stats.6love.ch/hi/" hreflang="hi">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<header>
+    <h1>6love.ch服务器统计</h1>
+</header>
+<main>
+    <section id="introduction" class="chart-section">
+        <h2>当前性能数据</h2>
+        <p>
+            我们很高兴与您分享我们的服务器统计数据。请注意，日常数据可能会有48-72小时的延迟。因此，最新数据可能在日常图表中缺失。
+        </p>
+        <p>
+            我们仅使用Google Analytics来分析我们的数据，以提供给您最准确的见解。实时数据显示最近30分钟的活动，包括用户及其国家。该数据每5分钟更新一次。
+        </p>
+        <p>
+            为了实现详细的列出，您可以点击图表。统计数据100%匿名。
+        </p>
+    </section>
+    <div class="chart-section">
+        <h2>每日使用统计</h2>
+        <canvas id="daily-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>每月使用统计</h2>
+        <canvas id="monthly-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>每年使用统计</h2>
+        <canvas id="yearly-chart" class="chart-container"></canvas>
+    </div>
+    <div id="detailModal" class="dialog-overlay">
+        <div class="dialog-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">详细信息</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>国家</th>
+                    <th>会话</th>
+                </tr>
+                </thead>
+                <tbody id="detail-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="realtime-section" class="chart-section">
+        <h2>实时数据</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>国家</th>
+                <th>活跃用户</th>
+            </tr>
+            </thead>
+            <tbody id="realtime-table-body"></tbody>
+        </table>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/statistics.js"></script>
+</body>
+</html>

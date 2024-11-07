@@ -1,0 +1,79 @@
+/* Grundlayout und Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e88e5;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Chart-Container und Abschnitt */
+.chart-section, #realtime-section {
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 40px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Verhindert das „Herausrutschen“ */
+}
+
+.chart-container {
+    width: 100% !important;
+    max-height: 400px !important; /* Maximale Höhe für Diagramme festlegen */
+    height: 400px; /* Standard-Höhe für Diagramme */
+}
+
+/* Modal-Overlay für Detailansicht */
+/* Versteckt das Modal standardmäßig */
+.dialog-overlay {
+    display: none; /* Standardmäßig ausgeblendet */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.dialog-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    max-height: 80%;
+    overflow-y: auto; /* Scrollbar bei Überlauf */
+}
+
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .chart-section {
+        width: 90%;
+    }
+}

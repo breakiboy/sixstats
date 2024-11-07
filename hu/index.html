@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Szolgáltatási Statisztikák - 6love.ch</title>
+    <meta name="description" content="Fedezze fel a 6love.ch szerverstatisztikáit és teljesítménystatisztikáit. Szerezzen betekintést a napi, havi és éves felhasználási adatokba, valamint a weboldal tevékenységére vonatkozó valós idejű információkba.">
+    <meta name="keywords" content="szerverstatisztikák, 6love, felhasználási adatok, Google Analytics, valós idejű adatok, teljesítménystatisztikák, anonimizált statisztikák">
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://stats.6love.ch/hu/">
+
+    <!-- Alternative URLs for each language version -->
+    <link rel="alternate" href="https://stats.6love.ch/" hreflang="x-default">
+    <link rel="alternate" href="https://stats.6love.ch/de/" hreflang="de">
+    <link rel="alternate" href="https://stats.6love.ch/en/" hreflang="en">
+    <link rel="alternate" href="https://stats.6love.ch/es/" hreflang="es">
+    <link rel="alternate" href="https://stats.6love.ch/fr/" hreflang="fr">
+    <link rel="alternate" href="https://stats.6love.ch/it/" hreflang="it">
+    <link rel="alternate" href="https://stats.6love.ch/tr/" hreflang="tr">
+    <link rel="alternate" href="https://stats.6love.ch/hu/" hreflang="hu">
+    <link rel="alternate" href="https://stats.6love.ch/ro/" hreflang="ro">
+    <link rel="alternate" href="https://stats.6love.ch/bg/" hreflang="bg">
+    <link rel="alternate" href="https://stats.6love.ch/pt/" hreflang="pt">
+    <link rel="alternate" href="https://stats.6love.ch/ru/" hreflang="ru">
+    <link rel="alternate" href="https://stats.6love.ch/zh/" hreflang="zh">
+    <link rel="alternate" href="https://stats.6love.ch/ja/" hreflang="ja">
+    <link rel="alternate" href="https://stats.6love.ch/ar/" hreflang="ar">
+    <link rel="alternate" href="https://stats.6love.ch/hi/" hreflang="hi">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<header>
+    <h1>6love.ch Szolgáltatási Statisztikák</h1>
+</header>
+<main>
+    <section id="introduction" class="chart-section">
+        <h2>Aktuális Teljesítmény Adatok</h2>
+        <p>
+            Örömmel osztjuk meg Önnel szerverstatisztikáinkat. Kérjük, vegye figyelembe, hogy a napi adatok 48-72 órás késlekedéssel járhatnak. Ezért a legfrissebb adatok hiányozhatnak a napi grafikonból.
+        </p>
+        <p>
+            Csak a Google Analytics-t használjuk adataik elemzésére, hogy a legpontosabb betekintést nyújthassuk Önnek. A valós idejű adatok az utolsó 30 perc aktivitását mutatják, beleértve a felhasználókat és országaikat. Ezeket az adatokat 5 percenként frissítjük.
+        </p>
+        <p>
+            A részletes elemzés érdekében kattintson a grafikonokra. A statisztikai adatok 100%-ban anonimak.
+        </p>
+    </section>
+    <div class="chart-section">
+        <h2>Napi Használati Statisztikák</h2>
+        <canvas id="daily-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Havi Használati Statisztikák</h2>
+        <canvas id="monthly-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Éves Használati Statisztikák</h2>
+        <canvas id="yearly-chart" class="chart-container"></canvas>
+    </div>
+    <div id="detailModal" class="dialog-overlay">
+        <div class="dialog-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Részletek</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Ország</th>
+                    <th>Ülések</th>
+                </tr>
+                </thead>
+                <tbody id="detail-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="realtime-section" class="chart-section">
+        <h2>Élő Adatok</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Ország</th>
+                <th>Aktív Felhasználók</th>
+            </tr>
+            </thead>
+            <tbody id="realtime-table-body"></tbody>
+        </table>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/statistics.js"></script>
+</body>
+</html>

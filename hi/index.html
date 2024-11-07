@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>सर्वर आँकड़े - 6love.ch</title>
+    <meta name="description" content="6love.ch से सर्वर आँकड़े और प्रदर्शन डेटा खोजें। दैनिक, मासिक और वार्षिक उपयोग डेटा, साथ ही वेबसाइट की गतिविधियों पर वास्तविक समय की जानकारी प्राप्त करें।">
+    <meta name="keywords" content="सर्वर आँकड़े, 6love, उपयोग डेटा, Google Analytics, वास्तविक समय डेटा, प्रदर्शन डेटा, अज्ञात आँकड़े">
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://stats.6love.ch/hi/">
+
+    <!-- Alternative URLs for each language version -->
+    <link rel="alternate" href="https://stats.6love.ch/" hreflang="x-default">
+    <link rel="alternate" href="https://stats.6love.ch/de/" hreflang="de">
+    <link rel="alternate" href="https://stats.6love.ch/en/" hreflang="en">
+    <link rel="alternate" href="https://stats.6love.ch/es/" hreflang="es">
+    <link rel="alternate" href="https://stats.6love.ch/fr/" hreflang="fr">
+    <link rel="alternate" href="https://stats.6love.ch/it/" hreflang="it">
+    <link rel="alternate" href="https://stats.6love.ch/tr/" hreflang="tr">
+    <link rel="alternate" href="https://stats.6love.ch/hu/" hreflang="hu">
+    <link rel="alternate" href="https://stats.6love.ch/ro/" hreflang="ro">
+    <link rel="alternate" href="https://stats.6love.ch/bg/" hreflang="bg">
+    <link rel="alternate" href="https://stats.6love.ch/pt/" hreflang="pt">
+    <link rel="alternate" href="https://stats.6love.ch/ru/" hreflang="ru">
+    <link rel="alternate" href="https://stats.6love.ch/zh/" hreflang="zh">
+    <link rel="alternate" href="https://stats.6love.ch/ja/" hreflang="ja">
+    <link rel="alternate" href="https://stats.6love.ch/ar/" hreflang="ar">
+    <link rel="alternate" href="https://stats.6love.ch/hi/" hreflang="hi">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<header>
+    <h1>6love.ch के लिए सर्वर आँकड़े</h1>
+</header>
+<main>
+    <section id="introduction" class="chart-section">
+        <h2>वर्तमान प्रदर्शन डेटा</h2>
+        <p>
+            हम आपके साथ अपने सर्वर आँकड़े साझा करके खुश हैं। कृपया ध्यान दें कि दैनिक डेटा में 48-72 घंटे की देरी हो सकती है। इसलिए, दैनिक चार्ट में नवीनतम डेटा गायब हो सकता है।
+        </p>
+        <p>
+            हम केवल Google Analytics का उपयोग करके अपने डेटा का विश्लेषण करते हैं, ताकि हम आपको सबसे सटीक जानकारी दे सकें। वास्तविक समय के डेटा पिछले 30 मिनट की गतिविधियों को दर्शाते हैं, जिसमें उपयोगकर्ता और उनके देश शामिल हैं। यह डेटा हर 5 मिनट में अपडेट होता है।
+        </p>
+        <p>
+            विस्तृत सूचीकरण की अनुमति देने के लिए, आप चार्ट पर क्लिक कर सकते हैं। सांख्यिकी डेटा 100% अनाम है।
+        </p>
+    </section>
+    <div class="chart-section">
+        <h2>दैनिक उपयोग आँकड़े</h2>
+        <canvas id="daily-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>मासिक उपयोग आँकड़े</h2>
+        <canvas id="monthly-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>वार्षिक उपयोग आँकड़े</h2>
+        <canvas id="yearly-chart" class="chart-container"></canvas>
+    </div>
+    <div id="detailModal" class="dialog-overlay">
+        <div class="dialog-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">विवरण</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>देश</th>
+                    <th>सत्र</th>
+                </tr>
+                </thead>
+                <tbody id="detail-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="realtime-section" class="chart-section">
+        <h2>वास्तविक समय के डेटा</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>देश</th>
+                <th>सक्रिय उपयोगकर्ता</th>
+            </tr>
+            </thead>
+            <tbody id="realtime-table-body"></tbody>
+        </table>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/statistics.js"></script>
+</body>
+</html>

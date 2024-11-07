@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>サーバー統計 - 6love.ch</title>
+    <meta name="description" content="6love.chのサーバー統計とパフォーマンスデータを発見してください。日次、月次、年次の使用データや、ウェブサイトの活動に関するリアルタイム情報を得ることができます。">
+    <meta name="keywords" content="サーバー統計, 6love, 使用データ, Google Analytics, リアルタイムデータ, パフォーマンスデータ, 匿名化された統計">
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://stats.6love.ch/ja/">
+
+    <!-- Alternative URLs for each language version -->
+    <link rel="alternate" href="https://stats.6love.ch/" hreflang="x-default">
+    <link rel="alternate" href="https://stats.6love.ch/de/" hreflang="de">
+    <link rel="alternate" href="https://stats.6love.ch/en/" hreflang="en">
+    <link rel="alternate" href="https://stats.6love.ch/es/" hreflang="es">
+    <link rel="alternate" href="https://stats.6love.ch/fr/" hreflang="fr">
+    <link rel="alternate" href="https://stats.6love.ch/it/" hreflang="it">
+    <link rel="alternate" href="https://stats.6love.ch/tr/" hreflang="tr">
+    <link rel="alternate" href="https://stats.6love.ch/hu/" hreflang="hu">
+    <link rel="alternate" href="https://stats.6love.ch/ro/" hreflang="ro">
+    <link rel="alternate" href="https://stats.6love.ch/bg/" hreflang="bg">
+    <link rel="alternate" href="https://stats.6love.ch/pt/" hreflang="pt">
+    <link rel="alternate" href="https://stats.6love.ch/ru/" hreflang="ru">
+    <link rel="alternate" href="https://stats.6love.ch/zh/" hreflang="zh">
+    <link rel="alternate" href="https://stats.6love.ch/ja/" hreflang="ja">
+    <link rel="alternate" href="https://stats.6love.ch/ar/" hreflang="ar">
+    <link rel="alternate" href="https://stats.6love.ch/hi/" hreflang="hi">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<header>
+    <h1>6love.chのサーバー統計</h1>
+</header>
+<main>
+    <section id="introduction" class="chart-section">
+        <h2>現在のパフォーマンスデータ</h2>
+        <p>
+            私たちのサーバー統計を共有できることを嬉しく思います。日次データには48〜72時間の遅延がある可能性があるため、最新のデータが日次グラフに欠けている場合があります。
+        </p>
+        <p>
+            最も正確な洞察を提供するために、データを分析するためにGoogle Analyticsを専用に使用しています。リアルタイムデータは、過去30分間のアクティビティを示し、ユーザーとその国を含みます。このデータは5分ごとに更新されます。
+        </p>
+        <p>
+            詳細な内訳を可能にするために、グラフをクリックできます。統計データは100%匿名化されています。
+        </p>
+    </section>
+    <div class="chart-section">
+        <h2>日次使用統計</h2>
+        <canvas id="daily-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>月次使用統計</h2>
+        <canvas id="monthly-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>年次使用統計</h2>
+        <canvas id="yearly-chart" class="chart-container"></canvas>
+    </div>
+    <div id="detailModal" class="dialog-overlay">
+        <div class="dialog-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">詳細情報</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>国</th>
+                    <th>セッション</th>
+                </tr>
+                </thead>
+                <tbody id="detail-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="realtime-section" class="chart-section">
+        <h2>リアルタイムデータ</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>国</th>
+                <th>アクティブユーザー</th>
+            </tr>
+            </thead>
+            <tbody id="realtime-table-body"></tbody>
+        </table>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/statistics.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Estatísticas do Servidor - 6love.ch</title>
+    <meta name="description" content="Descubra as estatísticas do servidor e os dados de desempenho do 6love.ch. Obtenha insights sobre dados de uso diários, mensais e anuais, bem como informações em tempo real sobre a atividade do site.">
+    <meta name="keywords" content="estatísticas do servidor, 6love, dados de uso, Google Analytics, dados em tempo real, dados de desempenho, estatísticas anonimizadas">
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://stats.6love.ch/pt/">
+
+    <!-- Alternative URLs for each language version -->
+    <link rel="alternate" href="https://stats.6love.ch/" hreflang="x-default">
+    <link rel="alternate" href="https://stats.6love.ch/de/" hreflang="de">
+    <link rel="alternate" href="https://stats.6love.ch/en/" hreflang="en">
+    <link rel="alternate" href="https://stats.6love.ch/es/" hreflang="es">
+    <link rel="alternate" href="https://stats.6love.ch/fr/" hreflang="fr">
+    <link rel="alternate" href="https://stats.6love.ch/it/" hreflang="it">
+    <link rel="alternate" href="https://stats.6love.ch/tr/" hreflang="tr">
+    <link rel="alternate" href="https://stats.6love.ch/hu/" hreflang="hu">
+    <link rel="alternate" href="https://stats.6love.ch/ro/" hreflang="ro">
+    <link rel="alternate" href="https://stats.6love.ch/bg/" hreflang="bg">
+    <link rel="alternate" href="https://stats.6love.ch/pt/" hreflang="pt">
+    <link rel="alternate" href="https://stats.6love.ch/ru/" hreflang="ru">
+    <link rel="alternate" href="https://stats.6love.ch/zh/" hreflang="zh">
+    <link rel="alternate" href="https://stats.6love.ch/ja/" hreflang="ja">
+    <link rel="alternate" href="https://stats.6love.ch/ar/" hreflang="ar">
+    <link rel="alternate" href="https://stats.6love.ch/hi/" hreflang="hi">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<header>
+    <h1>Estatísticas do Servidor para 6love.ch</h1>
+</header>
+<main>
+    <section id="introduction" class="chart-section">
+        <h2>Dados de Desempenho Atuais</h2>
+        <p>
+            Temos o prazer de compartilhar nossas estatísticas de servidor com você. Observe que os dados diários podem ter um atraso de 48-72 horas. Portanto, os dados mais recentes podem estar faltando no gráfico diário.
+        </p>
+        <p>
+            Usamos exclusivamente o Google Analytics para analisar nossos dados, oferecendo a você as informações mais precisas. Os dados em tempo real mostram as atividades dos últimos 30 minutos, incluindo os usuários e seus países. Esses dados são atualizados a cada 5 minutos.
+        </p>
+        <p>
+            Para permitir uma análise detalhada, você pode clicar nos gráficos. Os dados estatísticos são 100% anonimizados.
+        </p>
+    </section>
+    <div class="chart-section">
+        <h2>Estatísticas de Uso Diário</h2>
+        <canvas id="daily-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Estatísticas de Uso Mensal</h2>
+        <canvas id="monthly-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Estatísticas de Uso Anual</h2>
+        <canvas id="yearly-chart" class="chart-container"></canvas>
+    </div>
+    <div id="detailModal" class="dialog-overlay">
+        <div class="dialog-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Detalhes</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>País</th>
+                    <th>Sessões</th>
+                </tr>
+                </thead>
+                <tbody id="detail-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="realtime-section" class="chart-section">
+        <h2>Dados em Tempo Real</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>País</th>
+                <th>Usuários Ativos</th>
+            </tr>
+            </thead>
+            <tbody id="realtime-table-body"></tbody>
+        </table>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/statistics.js"></script>
+</body>
+</html>

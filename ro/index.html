@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistici Serviciu - 6love.ch</title>
+    <meta name="description" content="Descoperiți statisticile serverului și datele de performanță de la 6love.ch. Obțineți informații despre datele de utilizare zilnice, lunare și anuale, precum și informații în timp real despre activitatea site-ului.">
+    <meta name="keywords" content="statistici server, 6love, date de utilizare, Google Analytics, date în timp real, date de performanță, statistici anonimizate">
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://stats.6love.ch/ro/">
+
+    <!-- Alternative URLs for each language version -->
+    <link rel="alternate" href="https://stats.6love.ch/" hreflang="x-default">
+    <link rel="alternate" href="https://stats.6love.ch/de/" hreflang="de">
+    <link rel="alternate" href="https://stats.6love.ch/en/" hreflang="en">
+    <link rel="alternate" href="https://stats.6love.ch/es/" hreflang="es">
+    <link rel="alternate" href="https://stats.6love.ch/fr/" hreflang="fr">
+    <link rel="alternate" href="https://stats.6love.ch/it/" hreflang="it">
+    <link rel="alternate" href="https://stats.6love.ch/tr/" hreflang="tr">
+    <link rel="alternate" href="https://stats.6love.ch/hu/" hreflang="hu">
+    <link rel="alternate" href="https://stats.6love.ch/ro/" hreflang="ro">
+    <link rel="alternate" href="https://stats.6love.ch/bg/" hreflang="bg">
+    <link rel="alternate" href="https://stats.6love.ch/pt/" hreflang="pt">
+    <link rel="alternate" href="https://stats.6love.ch/ru/" hreflang="ru">
+    <link rel="alternate" href="https://stats.6love.ch/zh/" hreflang="zh">
+    <link rel="alternate" href="https://stats.6love.ch/ja/" hreflang="ja">
+    <link rel="alternate" href="https://stats.6love.ch/ar/" hreflang="ar">
+    <link rel="alternate" href="https://stats.6love.ch/hi/" hreflang="hi">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<header>
+    <h1>Statistici Serviciu pentru 6love.ch</h1>
+</header>
+<main>
+    <section id="introduction" class="chart-section">
+        <h2>Datele curente de performanță</h2>
+        <p>
+            Suntem bucuroși să împărtășim statisticile serverului nostru cu voi. Vă rugăm să rețineți că datele zilnice pot avea o întârziere de 48-72 de ore. Prin urmare, datele cele mai recente pot lipsi din graficul zilnic.
+        </p>
+        <p>
+            Folosim exclusiv Google Analytics pentru a analiza datele noastre, oferindu-vă cele mai precise informații. Datele în timp real arată activitățile din ultimele 30 de minute, inclusiv utilizatorii și țările lor. Aceste date sunt actualizate la fiecare 5 minute.
+        </p>
+        <p>
+            Pentru a permite o listare detaliată, puteți face clic pe grafice. Datele statistice sunt 100% anonimizate.
+        </p>
+    </section>
+    <div class="chart-section">
+        <h2>Statistici de utilizare zilnică</h2>
+        <canvas id="daily-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Statistici de utilizare lunară</h2>
+        <canvas id="monthly-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Statistici de utilizare anuală</h2>
+        <canvas id="yearly-chart" class="chart-container"></canvas>
+    </div>
+    <div id="detailModal" class="dialog-overlay">
+        <div class="dialog-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Detalii</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Țară</th>
+                    <th>Sesiuni</th>
+                </tr>
+                </thead>
+                <tbody id="detail-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="realtime-section" class="chart-section">
+        <h2>Date în timp real</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Țară</th>
+                <th>Utilizatori activi</th>
+            </tr>
+            </thead>
+            <tbody id="realtime-table-body"></tbody>
+        </table>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/statistics.js"></script>
+</body>
+</html>

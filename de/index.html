@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Server Statistiken - 6love.ch</title>
+    <meta name="description" content="Entdecken Sie die Serverstatistiken und Performanz-Daten von 6love.ch. Erhalten Sie Einblicke in tägliche, monatliche und jährliche Nutzungsdaten sowie Echtzeitinformationen zur Website-Aktivität.">
+    <meta name="keywords" content="Serverstatistiken, 6love, Nutzungsdaten, Google Analytics, Echtzeit-Daten, Performance-Daten, anonymisierte Statistiken">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://stats.6love.ch/">
+
+    <!-- Alternative URLs for each language version -->
+    <link rel="alternate" href="https://stats.6love.ch/" hreflang="x-default">
+    <link rel="alternate" href="https://stats.6love.ch/de/" hreflang="de">
+    <link rel="alternate" href="https://stats.6love.ch/en/" hreflang="en">
+    <link rel="alternate" href="https://stats.6love.ch/es/" hreflang="es">
+    <link rel="alternate" href="https://stats.6love.ch/fr/" hreflang="fr">
+    <link rel="alternate" href="https://stats.6love.ch/it/" hreflang="it">
+    <link rel="alternate" href="https://stats.6love.ch/tr/" hreflang="tr">
+    <link rel="alternate" href="https://stats.6love.ch/hu/" hreflang="hu">
+    <link rel="alternate" href="https://stats.6love.ch/ro/" hreflang="ro">
+    <link rel="alternate" href="https://stats.6love.ch/bg/" hreflang="bg">
+    <link rel="alternate" href="https://stats.6love.ch/pt/" hreflang="pt">
+    <link rel="alternate" href="https://stats.6love.ch/ru/" hreflang="ru">
+    <link rel="alternate" href="https://stats.6love.ch/zh/" hreflang="zh">
+    <link rel="alternate" href="https://stats.6love.ch/ja/" hreflang="ja">
+    <link rel="alternate" href="https://stats.6love.ch/ar/" hreflang="ar">
+    <link rel="alternate" href="https://stats.6love.ch/hi/" hreflang="hi">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<header>
+    <h1>Server Statistiken für 6love.ch</h1>
+</header>
+<main>
+    <section id="introduction" class="chart-section">
+        <h2>Aktuelle Performanz-Daten</h2>
+        <p>
+            Wir teilen gerne unsere Serverstatistiken mit euch. Bitte beachte, dass die täglichen Daten eine Verzögerung von 48-72 Stunden haben können. Deshalb fehlen in der täglichen Grafik die aktuellsten Daten, da sie unvollständig sind.
+        </p>
+        <p>
+            Wir nutzen ausschließlich Google Analytics für die Auswertung unserer Daten, um dir die genauesten Einblicke zu bieten. Die Live-Daten zeigen die Aktivitäten der letzten 30 Minuten, einschließlich der Nutzer und deren Länder. Diese Daten werden alle 5 Minuten aktualisiert.
+        </p>
+        <p>
+            Um eine detaillierte Auflistung zu ermöglichen, kannst du dich in die Diagramme einklicken. Die Statistikdaten sind zu 100% anonymisiert.
+        </p>
+    </section>
+
+    <div class="chart-section">
+        <h2>Tägliche Nutzungsstatistik</h2>
+        <canvas id="daily-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Monatliche Nutzungsstatistik</h2>
+        <canvas id="monthly-chart" class="chart-container"></canvas>
+    </div>
+    <div class="chart-section">
+        <h2>Jährliche Nutzungsstatistik</h2>
+        <canvas id="yearly-chart" class="chart-container"></canvas>
+    </div>
+
+    <div id="detailModal" class="dialog-overlay">
+        <div class="dialog-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Details</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Land</th>
+                    <th>Sitzungen</th>
+                </tr>
+                </thead>
+                <tbody id="detail-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="realtime-section" class="chart-section">
+        <h2>Live-Daten</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Land</th>
+                <th>Aktive Nutzer</th>
+            </tr>
+            </thead>
+            <tbody id="realtime-table-body"></tbody>
+        </table>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/statistics.js"></script>
+</body>
+</html>

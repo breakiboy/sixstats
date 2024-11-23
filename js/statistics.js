@@ -1,10 +1,32 @@
 const API_BASE_URL = 'https://backend.6love.ch/api/statistics';
+let banners = []; // Array, um die Banner zu speichern
+
 
 async function fetchStatsData(endpoint) {
     const response = await fetch(`${API_BASE_URL}/${endpoint}`);
     if (!response.ok) throw new Error(`Fehler beim Abrufen der Daten: ${response.statusText}`);
     return response.json();
 }
+
+async function fetchBanners() {
+    const response = await fetch('https://backend.6love.ch/api/banners-with-impressions/?limit=5');
+    if (!response.ok) throw new Error(`Fehler beim Abrufen der Banner: ${response.statusText}`);
+    banners = await response.json(); // Speichere die Banner im Array
+}
+
+
+function insertBanner(bannerIndex, elementId) {
+    if (banners[bannerIndex]) {
+        const banner = banners[bannerIndex];
+        const bannerElement = document.getElementById(elementId);
+        bannerElement.innerHTML = `
+            <a href="${banner.link}" target="_blank" rel="nofollow noopener">
+              <img src="${banner.image.full}" alt="${banner.name}" width="300" height="250">
+            </a>`;
+    }
+}
+
+
 
 function renderChart(elementId, data, label, labelKey) {
     const ctx = document.getElementById(elementId).getContext('2d');
@@ -67,24 +89,52 @@ async function showDetailView(period, selectedLabel) {
     try {
         const data = await fetchStatsData(endpoint);
         document.getElementById("modal-title").textContent = title;
+
         const tableBody = document.getElementById("detail-table-body");
-        tableBody.innerHTML = data.map(item => `<tr><td>${item.country}</td><td>${item.total_sessions}</td></tr>`).join('');
+        tableBody.innerHTML = data.map(item => `
+            <tr>
+                <td>
+                    <img src="https://bucket.6love.ch/flags/1x1/${item.country_code.toLowerCase()}.svg" 
+                         alt="${item.country}" 
+                         width="20" 
+                         height="15" 
+                         style="margin-right: 10px;">
+                    ${item.country}
+                </td>
+                <td>${item.total_sessions}</td>
+            </tr>
+        `).join('');
+
         document.getElementById("detailModal").style.display = "flex";
     } catch (error) {
         console.error("Fehler beim Laden der Detailansicht:", error);
     }
 }
 
+
 // Echtzeitdaten laden
 async function loadRealtimeData() {
     try {
         const data = await fetchStatsData('realtime');
         const tableBody = document.getElementById("realtime-table-body");
-        tableBody.innerHTML = data.map(item => `<tr><td><span class="flag-icon fi fi-${item.country_code.toLowerCase()}"></span> ${item.country}</td><td>${item.active_users}</td></tr>`).join('');
+        tableBody.innerHTML = data.map(item => `
+            <tr>
+                <td>
+                    <img src="https://bucket.6love.ch/flags/1x1/${item.country_code.toLowerCase()}.svg" 
+                         alt="${item.country}" 
+                         width="20" 
+                         height="15" 
+                         style="margin-right: 10px;">
+                    ${item.country}
+                </td>
+                <td>${item.active_users}</td>
+            </tr>
+        `).join('');
     } catch (error) {
         console.error("Fehler beim Laden der Echtzeitdaten:", error);
     }
 }
+
 
 // Modal-Schließfunktion
 function closeModal() {
@@ -100,9 +150,15 @@ document.addEventListener('keydown', (event) => {
 });
 
 // Ladeinitalisierungen
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     loadCharts();
     loadRealtimeData();
+    await fetchBanners();
+    // Dynamische Banner-Platzierung
+    for (let i = 0; i < banners.length; i++) {
+        const elementId = `banner-${i + 1}`; // Dynamische ID (banner-1, banner-2, ...)
+        insertBanner(i, elementId);
+    }
 });
 
 

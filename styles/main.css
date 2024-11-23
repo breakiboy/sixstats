@@ -150,6 +150,11 @@ main {
     transform: scale(1.05);
 }
 
-.banner {
-    padding: 20px;
+.banner-section {
+    margin-bottom: 20px; /* Abstand nach unten */
+    text-align: center;  /* Zentriert den Inhalt */
+}
+
+.banner-img {
+    margin: 0 auto; /* Zentriert das Bild horizontal */
 }
